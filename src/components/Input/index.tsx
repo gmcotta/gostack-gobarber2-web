@@ -18,7 +18,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...otherProps }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
-  const { fieldName, defaultValue, registerField } = useField(name);
+  const { fieldName, defaultValue, error, registerField } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -48,6 +48,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...otherProps }) => {
         ref={inputRef}
         {...otherProps}
       />
+      {error}
     </Container>
   );
 };
