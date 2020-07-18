@@ -3,17 +3,15 @@ import React from 'react';
 import SignIn from './pages/SignIn';
 // import SignUp from './pages/SignUp';
 import GlobalStyle from './styles/global';
-import ToastContainer from './components/ToastContainer';
-import { AuthProvider } from './context/AuthContext';
+import AppProvider from './context';
 
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <AuthProvider>
+      <AppProvider>
         <SignIn />
-      </AuthProvider>
-      <ToastContainer />
+      </AppProvider>
     </>
   );
 };
