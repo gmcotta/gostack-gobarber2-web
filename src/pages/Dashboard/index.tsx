@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiPower, FiClock } from 'react-icons/fi';
 
 import logoImg from '../../assets/logo.svg';
@@ -9,12 +9,15 @@ import {
   HeaderContent,
   Profile,
   Content,
-  NextAppointment,
   Schedule,
+  NextAppointment,
+  Section,
+  Appointment,
 } from './styles';
 import { useAuth } from '../../context/AuthContext';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const { signOut, user } = useAuth();
   return (
     <Container>
@@ -57,6 +60,69 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong>Manhã</strong>
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/46160812?s=460&u=69c8be5a970d42a933976cb2e58ad4f0db1d8ea5&v=4"
+                  alt="Gustavo"
+                />
+                <strong>Gustavo Matias</strong>
+              </div>
+            </Appointment>
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/46160812?s=460&u=69c8be5a970d42a933976cb2e58ad4f0db1d8ea5&v=4"
+                  alt="Gustavo"
+                />
+                <strong>Gustavo Matias</strong>
+              </div>
+            </Appointment>
+          </Section>
+          <Section>
+            <strong>Tarde</strong>
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/46160812?s=460&u=69c8be5a970d42a933976cb2e58ad4f0db1d8ea5&v=4"
+                  alt="Gustavo"
+                />
+                <strong>Gustavo Matias</strong>
+              </div>
+            </Appointment>
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/46160812?s=460&u=69c8be5a970d42a933976cb2e58ad4f0db1d8ea5&v=4"
+                  alt="Gustavo"
+                />
+                <strong>Gustavo Matias</strong>
+              </div>
+            </Appointment>
+          </Section>
         </Schedule>
       </Content>
     </Container>
