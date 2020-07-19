@@ -9,6 +9,7 @@ interface SignInCredentials {
 
 interface UserData {
   id: string;
+  email: string;
   avatar_url: string;
   name: string;
 }
